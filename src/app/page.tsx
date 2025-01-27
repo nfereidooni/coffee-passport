@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link"; // For navigation
 import coffeeShops from "./data/coffeeShops.json";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 // Define the CoffeeShop type
 type CoffeeShop = {
   id: number;
@@ -46,7 +49,7 @@ export default function HomePage() {
                   <p className="text-xs text-gray-600 text-center">PLACE STAMP HERE</p>
                 </div>
 
-                {/* Shop Image */}
+                {/* Coffee Shop Image */}
                 <Image
                   src={shop.image}
                   alt={`${shop.name} Image`}
@@ -55,11 +58,13 @@ export default function HomePage() {
                   className="mb-4 rounded-md"
                 />
 
-                {/* Shop Info */}
+                {/* Coffee Shop Info */}
                 <h2 className="text-lg font-semibold">{shop.name}</h2>
                 <p className="text-gray-600 text-sm">{shop.neighborhood}</p>
-                <p className="text-sm mt-2">
-                  <span className="font-bold">Rating:</span> ⭐ {shop.googleRating}
+                <p className="text-sm mt-2 flex items-center">
+                  <span className="font-bold mr-1">Rating:</span>
+                  <FontAwesomeIcon icon={faStar} className="text-yellow-400" />
+                  <span className="ml-1">{shop.googleRating}</span>
                 </p>
               </div>
             </Link>
