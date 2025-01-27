@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "name": "Carbonic Coffee",
+      "location": "Baldwin Village",
+      "status": "Not Visited"
+    },
+    {
+      "id": 2,
+      "name": "Rooms Coffee",
+      "location": "Baldwin Village",
+      "status": "Completed"
+    }
+  ]
+  
