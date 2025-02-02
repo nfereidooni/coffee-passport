@@ -5,13 +5,15 @@ import coffeeShops from "./data/coffeeShops.json";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
+import Header from '@/components/Header';
+
 // Define the CoffeeShop type
 type CoffeeShop = {
   id: number;
   name: string;
   address: string;
   neighborhood: string;
-  image: string;
+  largeImage: string;
   vibes: string;
   googleRating: number;
   status: string;
@@ -21,15 +23,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-orange-100 text-black">
       {/* Logo */}
-      <header className="p-4">
-        <Image
-          src="/images/logo.webp"
-          alt="Toronto Coffee Passport Logo"
-          width={150}
-          height={69}
-          className="mx-auto"
-        />
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main className="p-6">
@@ -51,7 +45,7 @@ export default function HomePage() {
 
                 {/* Coffee Shop Image */}
                 <Image
-                  src={shop.image}
+                  src={shop.largeImage || '/images/placeholder.webp'}
                   alt={`${shop.name} Image`}
                   width={150}
                   height={150}
